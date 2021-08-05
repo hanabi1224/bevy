@@ -343,7 +343,7 @@ impl App {
     /// A resource in Bevy represents globally unique data. Resources must be added to Bevy Apps
     /// before using them. This happens with [`App::insert_resource`].
     ///
-    /// See also `init_resource` for resources that implement `Default` or [`FromResources`].
+    /// See also `init_resource` for resources that implement `Default` or [`FromWorld`].
     ///
     /// ## Example
     /// ```
@@ -390,7 +390,7 @@ impl App {
 
     /// Initialize a resource in the current [App], if it does not exist yet
     ///
-    /// Adds a resource that implements `Default` or [`FromResources`] trait.
+    /// Adds a resource that implements `Default` or [`FromWorld`] trait.
     /// If the resource already exists, `init_resource` does nothing.
     ///
     /// ## Example
@@ -440,8 +440,9 @@ impl App {
 
     /// Sets the main runner loop function for this Bevy App
     ///
-    /// Usually the main loop is handled by Bevy integrated plugins ([`WinitPlugin`]), but
-    /// in some cases one might wish to implement their own main loop.
+    /// Usually the main loop is handled by Bevy integrated plugins 
+    /// ([`WinitPlugin`](https://docs.rs/bevy_winit/0.5.0/bevy_winit/struct.WinitPlugin.html)), 
+    /// but in some cases one might wish to implement their own main loop.
     ///
     /// This method sets the main loop function, overwriting a previous runner if any.
     ///
@@ -491,7 +492,9 @@ impl App {
     /// Bevy plugins can be grouped into a set of plugins. Bevy provides
     /// built-in PluginGroups that provide core engine functionality.
     ///
-    /// The plugin groups available by default are [`DefaultPlugins`] and [`MinimalPlugins`].
+    /// The plugin groups available by default are 
+    /// [`DefaultPlugins`](https://docs.rs/bevy_internal/0.5.0/bevy_internal/struct.DefaultPlugins.html)
+    /// and [`MinimalPlugins`](https://docs.rs/bevy_internal/0.5.0/bevy_internal/struct.MinimalPlugins.html).
     ///
     /// ## Example
     /// ```
